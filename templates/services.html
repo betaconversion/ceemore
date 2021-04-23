@@ -1,0 +1,158 @@
+{% extends "layout/main.html" %}
+{% load static %}
+{% block content %}
+
+
+    <!-- Hero Section Begin -->
+    <section class="hero-section set-bg" data-setbg="{% static 'img/services-bg.jpg'%}">
+        <div class="hero-text">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Services</h1>
+                    </div>
+                </div>
+                <div class="page-nav">
+                    <a href="{% url 'about' %}" class="left-nav"><i class="lnr lnr-arrow-left"></i> About</a>
+                    <a href="{% url 'gallery' %}" class="right-nav">Gallery <i class="lnr lnr-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Services Section Begin -->
+    <section  style="background-color: #050e2c; text-decoration: #850707;"   class="services-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-services-item">
+                        <div class="services-pic-item">
+                            <img src="{% static 'img/services/services-1.jpg'%}" alt="">
+                        </div>
+                        <div class="services-text">
+                            <h2>Outdoor Pool</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-services-item">
+                        <div class="services-pic-item">
+                            <img src="{% static 'img/services/services-2.jpg'%}" alt="">
+                        </div>
+                        <div class="services-text">
+                            <h2>Restaurant</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-services-item">
+                        <div class="services-pic-item">
+                            <img src="{% static 'img/services/services-3.jpg'%}" alt="">
+                        </div>
+                        <div class="services-text">
+                            <h2>SPA & Wellnes</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-services-item">
+                        <div class="services-pic-item">
+                            <img src="{% static 'img/services/services-4.jpg'%}" alt="">
+                        </div>
+                        <div class="services-text">
+                            <h2>Coffee Shop</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-services-item changed-align">
+                        <div class="services-pic-item">
+                            <img src="{% static 'img/services/services-5.jpg'%}" alt="">
+                        </div>
+                        <div class="services-text">
+                            <h2>Executive<br /> Conference<br /> Room</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-services-item changed-align">
+                        <div class="services-pic-item">
+                            <img src="{% static 'img/services/services-6.jpg'%}" alt="">
+                        </div>
+                        <div class="services-text">
+                            <h2>Events<br /> Conference<br /> Venue</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-services-item">
+                        <div class="services-pic-item">
+                            <img src="{% static 'img/services/services-7.jpg'%}" alt="">
+                        </div>
+                        <div class="services-text">
+                            <h2>Weddings</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-services-item">
+                        <div class="services-pic-item">
+                            <img src="{% static 'img/services/services-8.jpg'%}" alt="">
+                        </div>
+                        <div class="services-text">
+                            <h2>Gym</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+
+    <!-- Services Section End -->
+    <section  style="background-color: #050e2c; text-decoration: #850707;"   class="features-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center">
+                        <h2 style="color: #ffffff;">Features</h2>
+                    </div>
+                </div>
+                 
+                
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-features-item">
+                        <i class="flaticon-040-key-card"></i>
+                        <h4>Durability</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-features-item">
+                        <i class="flaticon-009-cctv"></i>
+                        <h4>Secure</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-features-item">
+                        <i class="flaticon-036-parking"></i>
+                        <h4>Low Price</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-features-item">
+                        <i class="flaticon-036-parking"></i>
+                        <h4>Quick service</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+
+   
+{% endblock content %}

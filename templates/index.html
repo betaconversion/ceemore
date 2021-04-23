@@ -1,0 +1,449 @@
+{% extends "layout/main.html" %}
+{% load static %}
+{% block content %}
+{% block styles %}
+
+<style>
+    .sendloader {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+    background: rgba(0, 0, 0, 0.2);
+    /*background: linear-gradient(180deg,rgba(8,14,31,0),#080e1f 80%,#080e1f);*/
+}
+.sendloader h5 {
+     
+    top: 60%;
+    left: 47%;
+    
+    position: absolute;
+    color: #850707;
+
+}
+.sendpreloader {
+    width: 100px;
+	height: 100px;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+	height: 50px;
+	position: absolute;
+  border: 16px solid #ffffff; /* Light grey */
+  border-top: 16px solid    #5a0909; /* Blue */
+  border-bottom: 16px solid #2b940b; /* Blue */
+  
+
+  border-radius: 50%;
+  
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+ {% endblock styles %}
+ 
+    <!-- Hero Slider Begin -->
+    <div class="hero-slider">
+        <div class="slider-item">
+            <div class="single-slider-item set-bg" data-setbg="{% static 'img/slider-1.jpg'%}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class=" jello ">We hope you’ll enjoy <br />your stay.</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="slider-nav">
+                                <div href="#" class="single-slider-nav">
+                                    <img src="{% static 'img/nav-1.jpg'%}" alt="">
+                                    <div class="nav-text active">
+                                        <p>HOME DOORS </p>
+                                    </div>
+                                </div>
+                                <div href="#" class="single-slider-nav">
+                                    <img src="{% static 'img/nav-2.jpg'%}" alt="">
+                                    <div class="nav-text">
+                                        <p>Furnitures</p>
+                                    </div>
+                                </div>
+                                 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Slider End -->
+
+    <!-- Room Availability Section Begin -->
+    <section style="background-color: #050e2c; text-decoration: #850707;" class="room-availability spad ">
+        <div class="container">
+            <div class="room-check">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="room-item text-white">
+                            <div class="room-pic-slider room-pic-item owl-carousel">
+                                <div class="room-pic">
+                                    <img src="{% static 'img/ceemore-gallery/home-door.jpg'%}" alt="">
+                                </div>
+                                <div class="room-pic">
+                                    <img src="{% static 'img/ceemore-gallery/door.jpg'%}" alt="">
+                                </div>
+                                <div class="room-pic">
+                                    <img src="{% static  'img/ceemore-gallery/ceemore-door.jpg'%}" alt="">
+                                </div>
+                            </div>
+                            <div class="room-text text-white">
+                                <div class="room-title">
+                                    <h6>IRON FABRICATION</h6>
+                                    <div class="room-price">
+                                        <span>From</span>
+                                        <h2>£252</h2>
+                                    </div>
+                                </div>
+                                <div class="room-features">
+                                    <div class="room-info">
+                                        <i class="fa fa-bolt fa-3x"></i>
+                                        <span>Durability </span>
+                                    </div>
+                                    <div class="room-info">
+                                         <i class="fa fa-lock fa-3x"></i>
+                                        <span>Secure</span>
+                                    </div>
+                                    <div class="room-info">
+                                        <i class="fa fa-bar-chart fa-3x"></i>
+                                        <span>Low Price</span>
+                                    </div>
+                                    <!--div class="room-info">
+                                        <i class="flaticon-036-parking"></i>
+                                        <span>Parking</span>
+                                    </div>
+                                    <div class="room-info last">
+                                        <i class="flaticon-007-swimming-pool"></i>
+                                        <span>Pool</span>
+                                    </div-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="check-form">
+                            <h2 style="color: #850707;"> Book for Consultation </h2>
+                            <form  method="post" class="revservform">
+                            {% csrf_token %}
+                                 
+                                    <div class="date-select">
+                                        <p style="color: #850707;">From</p>
+                                        <input id="date" style=" border: none ; border-bottom:1px solid #808080;" type="text" class="datepicker-1 form-control" value="dd / mm / yyyy" required>
+                                        <!--img src="{% static 'img/calendar.png'%}" alt=""-->
+                                    </div>
+                                    <!--div class="date-select to">
+                                        <p>To</p>
+                                        <input type="text" class="datepicker-2" value="dd / mm / yyyy">
+                                        <img src="{% static 'img/calendar.png'%}" alt="">
+                                    </div-->
+                              
+                                 <p></p>
+                                <div class="room-selector">
+                                    <p style="color: #850707;">Email</p>
+                                  <input id="email" style=" border: none ; border-bottom:1px solid #808080;" type="email" class="form-control" required>
+                                </div>
+                                <div class="room-selector">
+                                    <p style="color: #850707;"> Phone Number</p>
+                                  <input id="phone" style=" border: none ; border-bottom:1px solid #808080;" type="tel" class="form-control" required>
+                                </div>
+                                <br>
+                                <button style="color:  #ffffff ; border: 2px solid #850707; background:#850707 ;" class="btn" type="submit">Book <i style="color: #850707;" class="fa fa-arrow-right"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-room">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <h2  style="color: #ffffff;">“Customers may forget what you said  but they will never forget how you made themfeel”.</h2>
+                    </div>
+                </div>
+                <div class="about-para">
+                    <div class="row"> 
+                        <div class="col-lg-12 text-center">
+                            <p  style="color: #ffffff;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus libero mauris,
+                                bibendum eget sapien ac, ultrices rhoncus ipsum. Donec nec sapien in urna fermentum
+                                ornare. Morbi vel ultrices leo. Sed eu turpis eu arcu vehicula fringilla ut vitae
+                                orci. Suspendisse maximus malesuada</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Room Availability Section End -->
+
+    <!-- Facilities Section Begin -->
+    <div style="background-color: #050e2c; text-decoration: #850707;"  class="facilities-section spad">
+        <div class="container">
+            <div class="facilities-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title">
+                            <h1 class="text-center">Services</h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-0">
+                        <div class="facilities-img set-bg" data-setbg="{% static 'img/ceemore-gallery/home-door.jpg'%}"></div>
+                    </div>
+                    <div class="col-lg-6 p-0 ">
+                        <div class="facilities-text-warp">
+                            <div class="facilities-text">
+                                <h2>IRON FABRICATION</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipis-cing elit. Mauris tincidunt consectetur
+                                    turpis, eget consequat.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-0 order-lg-1 order-2">
+                        <div class="facilities-text-warp">
+                            <div class="facilities-text">
+                                <h2>HOME DOORS</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipis-cing elit. Mauris tincidunt consectetur
+                                    turpis, eget consequat.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-0 order-lg-2 order-1">
+                        <div class="facilities-img set-bg" data-setbg="{% static 'img/ceemore-gallery/door.jpg'%}"></div>
+                    </div>
+                </div>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <a href="{% url 'service' %}" style="color:  #ffffff ; border: 2px solid #850707; background:#850707 ;" class="btn ">View More <i class="fa fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facilities Section End -->
+
+    <div style="background-color: #050e2c; text-decoration: #850707;"  class="testimonial-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h1>Reviews</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="testimonial-item">
+                        <div class="tab-content">
+                            <div class="tab-pane fade-in active" id="testimonial-1" role="tabpanel">
+                                <div class="single-testimonial-item">
+                                    <span class="test-date">02/02/2019</span>
+                                    <div class="test-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h4>Loved It</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiselit. Vivamus libero mauris,
+                                        bibendum eget sapien ac, ultrices rhoncus ipsum. Donec nec sapien in urna
+                                        fermentum ornare.</p>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="testimonial-2" role="tabpanel">
+                                <div class="single-testimonial-item">
+                                    <span class="test-date">02/02/2019</span>
+                                    <div class="test-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h4>Loved It2</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiselit. Vivamus libero mauris,
+                                        bibendum eget sapien ac, ultrices rhoncus ipsum. Donec nec sapien in urna
+                                        fermentum ornare.</p>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="testimonial-3" role="tabpanel">
+                                <div class="single-testimonial-item">
+                                    <span class="test-date">02/02/2019</span>
+                                    <div class="test-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h4>Loved It3</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiselit. Vivamus libero mauris,
+                                        bibendum eget sapien ac, ultrices rhoncus ipsum. Donec nec sapien in urna
+                                        fermentum ornare.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="testimonial-author-item">
+                        <ul class="nav" role="tablist">
+                            <li>
+                                <a data-toggle="tab" href="#testimonial-1" role="tab" class="show active">
+                                    <div class="author-pic">
+                                        <img src="{% static 'img/testimonial/author-1.jpg'%}" alt="">
+                                    </div>
+                                    <div class="author-text">
+                                        <h5>John Doe <span>Berlin</span></h5>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#testimonial-2" role="tab">
+                                    <div class="author-pic">
+                                        <img src="{% static 'img/testimonial/author-2.jpg'%}" alt="">
+                                    </div>
+                                    <div class="author-text">
+                                        <h5>John Doe <span>Berlin</span></h5>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#testimonial-3" role="tab">
+                                    <div class="author-pic">
+                                        <img src="{% static 'img/testimonial/author-3.jpg'%}" alt="">
+                                    </div>
+                                    <div class="author-text">
+                                        <h5>John Doe <span>Berlin</span></h5>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- send loader -->
+    <div id="loadercontent" style="display: none;" class=" ">
+        <div class="sendloader">
+            <div id="loadsend" class="sendpreloader"></div>
+            <h5 >Processing...</h5>
+        </div>
+       
+       
+    </div>
+   
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            
+            <div class="modal-body text-center text-primary">
+               
+                 <h4 id=body></h4>
+
+            </div>
+            
+          </div>
+        </div>
+
+    <!-- Follow Instagram Section Begin -->
+    <section class="follow-instagram">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Follow us on Instagram @ceemorehomeoptions</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Follow Instagram Section End -->
+
+    <!-- Footer Room Pic Section Begin -->
+    <div class="footer-room-pic">
+        <div class="container-fluid">
+            <div class="row">
+                <img src="{% static 'img/ceemore-gallery/home-door.jpg'%}" alt="">
+                <img src="{% static 'img/ceemore-gallery/door.jpg'%}" alt="">
+                <img src="{% static 'img/ceemore-gallery/ceemore-door.jpg'%}" alt="">
+                <img src="{% static 'img/room-footer-pic/room-4.jpg'%}" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Footer Room Pic Section End -->
+{% block javascripts %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+   
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        const csrftoken = getCookie('csrftoken');
+     
+     $(document).ready(function () {
+         $(".revservform").submit(function (event) {
+             event.preventDefault();
+             console.log("form")
+             $.ajax({
+                type: "POST",
+                url: "/reservation/",
+                data: {
+                    email:$("#email").val() ,
+                    date:$("#date").val(),
+                    phone:$("#phone").val(),
+                    //pack_name:$('#pack_name').val(),
+                    //pack_amount:$('#pack_amount').val(),
+                    csrfmiddlewaretoken: csrftoken,
+                },
+                beforeSend: function() {
+                        // setting a timeout
+                        $("#loadercontent").show();
+                        
+                    },
+                success: function(data) {
+                    document.getElementById("body").innerText = data.context
+                    //alert(data.user);
+                    $("#exampleModalCenter").modal('show');
+                    setTimeout(function(){ window.location.reload(); },1300);
+                    //$('#body').html(data);
+                    document.getElementById("loadsend").style.display = "none";
+                    document.getElementById("span-text").style.display = "none"
+
+                    // window.location.reload();
+
+                }
+            });
+         })
+     })
+</script>
+
+{% endblock javascripts %}
+{% endblock content %}

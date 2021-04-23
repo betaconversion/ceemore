@@ -1,0 +1,51 @@
+{% load static %}
+{% load i18n %}
+<!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="container-fluid">
+            <div class="inner-header">
+                <div class="logo">
+                    <a href="/"><img src="{% static 'img/logo.png'%}" alt=""></a>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <nav class="main-menu mobile-menu">
+                                <ul>
+                                    <li><a href="{% url 'about' %}">About</a></li>
+                                    <li><a href="{% url 'service' %}">Services</a></li>
+                                    <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                   
+                                    <li><a href="{% url 'contact_us' %}">Contact</a></li>
+                                    <!--li>
+                                    <form action="{% url 'set_language' %}" method="post">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="redirect" value="{{ redirect_to }}">
+                                        <select name="language" id="select">
+                                            {% get_available_languages as LANGUAGES %}
+                                            {% get_language_info_list for LANGUAGES as languages %}
+                                            {% for language in languages %}
+                                            <option value="{{ language.code }}">
+                                                {{ language.name_local }}  
+                                            </option>
+                                            {% endfor %}
+                                           
+                                        </select>
+                                        <input style="color: #ffffff; background: #850707;"  type="submit" value="Go" class="btn"> 
+                                    </form> 
+                                </li--> 
+                                </ul>
+                            </nav>
+                            <div class="top-info">
+                            <i style="color: #850707;" class="fa fa-map-marker fa-2x" ></i>
+                                 <!--img src="{% static 'img/placeholder.png'%}" alt=""-->
+                                <span>1525 Boring Lane, Los Angeles, CA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="mobile-menu-wrap"></div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->

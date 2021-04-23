@@ -1,0 +1,99 @@
+{% extends "layout/main.html" %}
+{% load static %}
+{% block content %}
+
+
+    <!-- Hero Section Begin -->
+    <section class="hero-section set-bg" data-setbg="{% static 'img/services-bg.jpg'%}">
+        <div class="hero-text">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Gallery</h1>
+                    </div>
+                </div>
+                <div class="page-nav">
+                    <a href="{% url 'about' %}" class="left-nav"><i class="lnr lnr-arrow-left"></i> About</a>
+                    <a href="{% url 'service' %}" class="right-nav">Services <i class="lnr lnr-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Services Section Begin -->
+    <section  style="background-color: #050e2c; text-decoration: #850707;"   class="services-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-services-item">
+                        <div class="services-pic-item">
+                            <img src="{% static 'img/ceemore-gallery/ceemore-door.jpg'%}" alt="">
+                        </div>
+                         
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-services-item">
+                        <div class="services-pic-item">
+                            <img src="{% static 'img/ceemore-gallery/door.jpg'%}" alt="">
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-services-item">
+                        <div class="services-pic-item">
+                            <img src="{% static 'img/ceemore-gallery/fence.jpg'%}" alt="">
+                        </div>
+                         
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-services-item">
+                        <div class="services-pic-item">
+                            <img src="{% static 'img/ceemore-gallery/home-door.jpg'%}" alt="">
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-services-item changed-align">
+                        <div class="services-pic-item">
+                            <img src="{% static 'img/services/services-5.jpg'%}" alt="">
+                        </div>
+ 
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-services-item changed-align">
+                        <div class="services-pic-item">
+                            <img src="{% static 'img/services/services-6.jpg'%}" alt="">
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-services-item">
+                        <div class="services-pic-item">
+                            <img src="{% static 'img/services/services-7.jpg'%}" alt="">
+                        </div>
+                         
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-services-item">
+                        <div class="services-pic-item">
+                            <img src="{% static 'img/services/services-8.jpg'%}" alt="">
+                        </div>
+                         
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+
+     
+   
+{% endblock content %}
